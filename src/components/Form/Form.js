@@ -1,9 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
-// import { addContacts } from '../../redux/sliseContacts';
 import { nanoid } from 'nanoid';
 import css from 'components/Form/Form.module.css';
-import { addContact } from '../../redux/operations';
-import { getContacts } from '../../redux/selector';
+import { addContact } from '../../redux/contacts/operations';
+import { getContacts } from '../../redux/contacts/selector';
 
 const Form = () => {
   // Получаем ссылку на функцию отправки экшенов
@@ -13,7 +12,7 @@ const Form = () => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    
+
     const contact = {
       name: event.target.name.value,
       phone: event.target.phone.value,
@@ -27,7 +26,7 @@ const Form = () => {
       return;
     }
 
-      dispatch(addContact(contact));
+    dispatch(addContact(contact));
     //очищаем поля ввода
     event.target.reset();
   };

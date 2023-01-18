@@ -1,17 +1,17 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import css from 'components/Contacts/Contacts.module.css';
+import css from 'components/Contacts/ContactsList.module.css';
 import { MdClose } from 'react-icons/md';
-import { fetchContacts } from '../../redux/operations';
-import { deleteContact } from '../../redux/operations';
+import { fetchContacts } from '../../redux/contacts/operations';
+import { deleteContact } from '../../redux/contacts/operations';
 import {
   getContacts,
   getIsLoading,
   getError,
   getFilterValue,
-} from '../../redux/selector';
+} from '../../redux/contacts/selector';
 
-const Contacts = () => {
+const ContactsList = () => {
   const items = useSelector(getContacts);
   const isLoading = useSelector(getIsLoading);
   const error = useSelector(getError);
@@ -52,4 +52,4 @@ const Contacts = () => {
   );
 };
 
-export default Contacts;
+export default ContactsList;
