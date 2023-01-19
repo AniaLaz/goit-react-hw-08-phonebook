@@ -29,7 +29,7 @@ import { useAuth } from '../../hooks';
 import Register from '../../pages/Register';
 
 const HomePage = lazy(() => import('../../pages/Home'));
-// const RegisterPage = lazy(() => import('../../pages/Register'));
+const RegisterPage = lazy(() => import('../../pages/Register'));
 const LoginPage = lazy(() => import('../../pages/Login'));
 const ContactsPage = lazy(() => import('../../pages/Contacts'));
 
@@ -54,8 +54,8 @@ export const App = () => {
         <Route
           path="/register"
             element={
-            <Register />
-            // <RestrictedRoute redirectTo="/contacts" component={<Register />}/>
+            // <Register />
+            <RestrictedRoute redirectTo="/contacts" component={<Register />}/>
           }
         />
         <Route
