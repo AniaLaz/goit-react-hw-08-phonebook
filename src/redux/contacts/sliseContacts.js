@@ -9,6 +9,7 @@ const handlePending = state => {
   state.isLoading = true;
 };
 const handleRejected = (state, action) => {
+   console.log(state);
   state.isLoading = false;
   state.error = action.payload;
 };
