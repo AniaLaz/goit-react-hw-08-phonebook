@@ -32,11 +32,11 @@ const ContactsList = () => {
           items
             .filter(item => item.name.toLowerCase().includes(filterValue))
             .map(item => {
-              const { id, name, phone } = item;
+              const { id, name, number } = item;
               return (
                 <li className={css.item} key={id} id={id}>
                   <div className={css.itemContent}>
-                    {name}: {phone}
+                    {name}: {number}
                   </div>
                   <button
                     className={css.buttonDelete}

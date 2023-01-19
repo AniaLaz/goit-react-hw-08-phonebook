@@ -1,5 +1,4 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { nanoid } from 'nanoid';
 import css from 'components/Form/Form.module.css';
 import { addContact } from '../../redux/contacts/operations';
 import { getContacts } from '../../redux/contacts/selector';
@@ -15,8 +14,7 @@ const Form = () => {
 
     const contact = {
       name: event.target.name.value,
-      phone: event.target.phone.value,
-      id: nanoid(),
+      number: event.target.number.value,
     };
 
     if (items.length > 0 && items.find(item => item.name === contact.name)) {
@@ -46,7 +44,7 @@ const Form = () => {
         <span className={css.spanNamber}>Namber</span>
         <input
           type="tel"
-          name="phone"
+          name="number"
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
