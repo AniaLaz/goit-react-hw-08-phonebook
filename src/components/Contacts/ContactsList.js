@@ -36,7 +36,10 @@ const ContactsList = () => {
               return (
                 <li className={css.item} key={id} id={id}>
                   <div className={css.itemContent}>
-                    {name}: {number}
+                    {name}:{number}
+                  </div>
+                  <div className={css.itemContent}>
+                    {number}
                   </div>
                   <button
                     className={css.buttonDelete}
